@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  [field[: 
+  field[: 
+  [options]: MyString
+
+two:
+  [field[: 
+  field[: 
+  [options]: MyString
