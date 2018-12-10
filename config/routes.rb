@@ -3,6 +3,5 @@ Rails.application.routes.draw do
   root 'pages#index'
   # get "users", to: "users#index"
   # get "name", to: "name#index"
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  match '*path', to: 'pages#index', via: :all  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
