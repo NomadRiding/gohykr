@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.string :username
       t.string :gender
-      t.intiger :rating
+      t.integer :rating
       t.text :bio
 
       t.timestamps
