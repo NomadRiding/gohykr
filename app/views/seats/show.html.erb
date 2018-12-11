@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Open seat:</strong>
+  <%= @seat.open_seat %>
+</p>
+
+<p>
+  <strong>Taken seat:</strong>
+  <%= @seat.taken_seat %>
+</p>
+
+<p>
+  <strong>Itinerary:</strong>
+  <%= @seat.itinerary %>
+</p>
+
+<%= link_to 'Edit', edit_seat_path(@seat) %> |
+<%= link_to 'Back', seats_path %>

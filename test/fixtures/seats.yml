@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  open_seat: MyString
+  taken_seat: MyString
+  itinerary: one
+
+two:
+  open_seat: MyString
+  taken_seat: MyString
+  itinerary: two
