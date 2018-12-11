@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :itineraries
   get 'sessions/new'
   resources :users
   resources :sessions
