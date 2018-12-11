@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @itinerary.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @itinerary.end_date %>
+</p>
+
+<p>
+  <strong>Available seat:</strong>
+  <%= @itinerary.available_seat %>
+</p>
+
+<p>
+  <strong>Projected eta:</strong>
+  <%= @itinerary.projected_eta %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @itinerary.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @itinerary.user %>
+</p>
+
+<%= link_to 'Edit', edit_itinerary_path(@itinerary) %> |
+<%= link_to 'Back', itineraries_path %>
