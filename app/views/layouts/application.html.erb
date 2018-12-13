@@ -10,6 +10,24 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <div class="logo-wrapper">
+        <a class="logo" href="">
+          <%= image_tag "gohykr-logo.png", class: "logo-page"%>
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            Available Itineraries</li>
+          <li>Post a Ride</li>
+          <li>Events</li>
+          <li>About Us</li>
+          <li>FAQ</li>
+          <li>Log In or Sign Up</li>
+        </ul>
+      </nav>
+  
+      <%= yield %>
   </body>
 </html>
