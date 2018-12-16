@@ -1,3 +1,43 @@
 // Place all the styles related to the Itineraries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#itinerary {
+  margin-top: 8vh;
+  margin-left: 4vw;
+}
+
+.linkBack {
+  margin-left: 1vw;
+  color: white;
+}
+
+.editIt {
+  margin-top: 8vh;
+}
+
+.editIt h1 {
+  margin-left: 2vw;
+}
+
+.showItinerary {
+  float: right;
+  margin-top: 12vh;
+  word-wrap: normal;
+  width: 80vw;
+  border: 1px solid black;
+}
+
+.containShow {
+  display: flex;
+}
+
+.showPicture {
+  margin-top: 12vh;
+  width: 20vw;
+  border: 1px solid green;
+  word-wrap: normal;
+}
+
+.imageHolder {
+  margin-top: 2vh;
+}

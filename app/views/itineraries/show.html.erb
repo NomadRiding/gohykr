@@ -1,34 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="containShow">
+  <div class="showPicture">
+    <div class="col-md-8">
+      <div class="text-center imageHolder">
+        <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @itinerary.start_date %>
-</p>
+<div class="showItinerary">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>End date:</strong>
-  <%= @itinerary.end_date %>
-</p>
+  <p>
+    <strong>Start date:</strong>
+    <%= @itinerary.start_date %>
+  </p>
 
-<p>
-  <strong>Available seat:</strong>
-  <%= @itinerary.available_seat %>
-</p>
+  <p>
+    <strong>End date:</strong>
+    <%= @itinerary.end_date %>
+  </p>
 
-<p>
-  <strong>Projected eta:</strong>
-  <%= @itinerary.projected_eta %>
-</p>
+  <p>
+    <strong>Available seat:</strong>
+    <%= @itinerary.available_seat %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @itinerary.description %>
-</p>
+  <p>
+    <strong>Projected eta:</strong>
+    <%= @itinerary.projected_eta %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @itinerary.user %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @itinerary.description %>
+  </p>
 
-<%= link_to 'Edit', edit_itinerary_path(@itinerary) %> |
-<%= link_to 'Back', itineraries_path %>
+  <p>
+    <strong>User:</strong>
+    <%= @itinerary.user.first_name %>
+  </p>
+  </div>
+<div>
+    <%= link_to 'Edit', edit_itinerary_path(@itinerary) %> |
+    <%= link_to 'Back', itineraries_path %>
+  </div>
