@@ -11,37 +11,52 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.text_field :start_date %>
+  <div class="field form-group">
+    <div class="col-md-8">
+      <strong><%= form.label :start_date, class: "col-lg-3" %></strong> 
+      <%= form.text_field :start_date, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.text_field :end_date %>
+  <div class="field form-group">
+
+    <div class="col-md-8">
+      <strong><%= form.label :end_date, class: "col-lg-3" %></strong>
+      <%= form.text_field :end_date, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :available_seat %>
-    <%= form.number_field :available_seat %>
+  <div class="field form-group">
+    <div class="col-md-8">
+      <strong><%= form.label :available_seat, class: "col-lg-3" %></strong>
+      <%= form.number_field :available_seat, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :projected_eta %>
-    <%= form.text_field :projected_eta %>
+  <div class="field form-group">
+    <div class="col-md-8">
+      <strong><%= form.label :projected_eta, class: "col-lg-3" %></strong>
+      <%= form.text_field :projected_eta, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+  <div class="field form-group">
+    <div class="col-md-8">
+      <strong><%= form.label :description, class: "col-lg-3" %></strong>
+      <%= form.text_area :description, class: "form-control" %>
+    </div>
+  </>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+  <div class="field form-group">
+    <div class="col-md-8">
+      <strong><%= form.label :user_id, class: "col-lg-3" %></strong>
+      <%= form.text_field :user_id, class: "form-control" %>
+    </div>
   </div>
-
+  <div class="col-md-8">
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :submit, class:"btn btn-primary" %>
+  </div>
   </div>
 <% end %>
+</div>
