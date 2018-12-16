@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<div id="container">
+<div class="itineraryContainer">
 <h1>Itineraries</h1>
 
 <table>
@@ -23,15 +23,17 @@
         <td><%= itinerary.available_seat %></td>
         <td><%= itinerary.projected_eta %></td>
         <td><%= itinerary.description %></td>
-        <td><%= itinerary.user %></td>
+        <td><%= itinerary.user.first_name %></td>
         <td><%= link_to 'Show', itinerary %></td>
         <td><%= link_to 'Edit', edit_itinerary_path(itinerary) %></td>
-        <td><%= link_to 'Destroy', itinerary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if @current_user.id == itinerary.user.id %>
+          <td><%= link_to 'Destroy', itinerary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-</div>
 <br>
 
-<%= link_to 'New Itinerary', new_itinerary_path %>
+<%= link_to 'New Itinerary', new_itinerary_path, class:"btn btn-primary" %>
+</div>

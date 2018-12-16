@@ -39,8 +39,12 @@
     <strong>User:</strong>
     <%= @itinerary.user.first_name %>
   </p>
-  </div>
 <div>
-    <%= link_to 'Edit', edit_itinerary_path(@itinerary) %> |
+<div class="btn btn-primary">
+    <%= link_to 'Edit', edit_itinerary_path(@itinerary) %>
+    </div>
+    <div class="btn btn-primary">
     <%= link_to 'Back', itineraries_path %>
+    </div>
+  </div>
   </div>
