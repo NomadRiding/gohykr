@@ -40,6 +40,11 @@
     <%= @itinerary.user.first_name %>
   </p>
 <div>
+  <% if @current_user.id == @itinerary.user.id %>
+    <div class="btn btn-primary">
+        <td><%= link_to 'Destroy', @itinerary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </div>
+  <% end %>
 <div class="btn btn-primary">
     <%= link_to 'Edit', edit_itinerary_path(@itinerary) %>
     </div>

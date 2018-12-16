@@ -1,0 +1,29 @@
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+     <th scope="col">Start date</th>
+      <th scope="col">End date</th>
+      <th scope="col">Available seat</th>
+      <th scope="col">Projected eta</th>
+      <th scope="col">Description</th>
+      <th scope="col">User</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @itineraries.each do |itinerary| %>
+      <tr scope="row">
+        <td><%= itinerary.start_date %></td>
+        <td><%= itinerary.end_date %></td>
+        <td><%= itinerary.available_seat %></td>
+        <td><%= itinerary.projected_eta %></td>
+        <td><%= itinerary.description %></td>
+        <td><%= itinerary.user.first_name %></td>
+        <td><%= link_to 'Show', itinerary %></td>
+        <td><%= link_to 'Edit', edit_itinerary_path(itinerary) %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
