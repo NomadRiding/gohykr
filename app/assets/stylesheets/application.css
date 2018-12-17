@@ -211,6 +211,7 @@ header {
   header nav > ul > li .tab .tab-content .tab-column a.call-to-action:hover {
     background: #fff;
     color: #363636;
+    cursor: pointer;
   }
   header nav > ul > li .tab .tab-content .tab-column > ul li {
     display: block;
@@ -371,6 +372,7 @@ header {
   header nav > ul > li:hover .tab {
     -webkit-transform: translateY(0%);
             transform: translateY(0%);
+        
   }
   header nav > ul > li:hover::after {
     -webkit-transform: scale(1, 1);
@@ -475,6 +477,25 @@ header {
   header.collapsed nav ul li::after {
     height: 2px;
   }
+
+  .login {
+      text-decoration: none;
+      color: #666;
+  }
+
+  a {
+      text-decoration: none;
+  }
+
+  a:hover {
+      background-color: white;
+      color: black;
+  }
+
+
+
+
+  
 
 /******************************************* END  ******************************************/
 
@@ -681,6 +702,7 @@ header {
   .user_unregistered-signup:hover {
     color: rgba(34, 34, 34, 0.85);
     background-color: #ccc;
+    cursor: pointer;
   }
   
   /**
@@ -746,6 +768,7 @@ header {
   }
   .user_options-forms .forms_buttons-forgot:hover {
     color: #b3b3b3;
+    cursor: pointer;
   }
   .user_options-forms .forms_buttons-action {
     background-color: #e8716d;
