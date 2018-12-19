@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get '/events', to:'events#index'
   get '/search', to:'events#search'
 
+  get '/profile', to:'profile#index'
   root 'hello_world#index'
 end

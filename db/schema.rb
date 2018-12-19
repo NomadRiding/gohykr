@@ -61,5 +61,12 @@ ActiveRecord::Schema.define(version: 2018_12_17_194956) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string "name"
+    t.string "gender"
+    t.integer "rating"
+    t.text "bio"
+  end
+
   add_foreign_key "itineraries", "users"
 end
