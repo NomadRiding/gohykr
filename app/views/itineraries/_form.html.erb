@@ -13,21 +13,35 @@
 
   <div class="field form-group">
     <div class="col-md-8">
+      <strong><%= label_tag :origin, "Origin", class: "col-lg-3" %></strong> 
+      <%= text_field_tag :origin, nil,  class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <div class="col-md-8">
       <strong><%= form.label :start_date, class: "col-lg-3" %></strong> 
-      <%= form.text_field :start_date, class: "form-control" %>
+      <%= form.date_field :start_date, class: "form-control" %>
+    </div>
+  </div>
+
+    <div class="field form-group">
+    <div class="col-md-8">
+      <strong><%= label_tag :destination, "Destination", class: "col-lg-3" %></strong> 
+      <%= text_field_tag :destination, nil, class: "form-control" %>
+    </div>
+  </div>
+  
+  <div class="field form-group">
+    <div class="col-md-8">
+      <strong><%= form.label :end_date, class: "col-lg-3" %></strong>
+      <%= form.date_field :end_date, class: "form-control" %>
     </div>
   </div>
 
   <div class="field">
     <%= form.label :avatar_image %>
     <%= form.file_field :avatar_image %>
-  </div>
-
-  <div class="field form-group">
-    <div class="col-md-8">
-      <strong><%= form.label :end_date, class: "col-lg-3" %></strong>
-      <%= form.text_field :end_date, class: "form-control" %>
-    </div>
   </div>
 
   <div class="field form-group">
@@ -64,3 +78,4 @@
   </div>
 <% end %>
 </div>
+
