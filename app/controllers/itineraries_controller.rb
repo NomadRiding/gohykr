@@ -4,7 +4,7 @@ class ItinerariesController < ApplicationController
   # GET /itineraries
   # GET /itineraries.json
   def index
-    @itineraries = Itinerary.all
+    @itineraries = Itinerary.all.order(:start_date)
     @current_user = User.find(session[:user_id])
   end
 
