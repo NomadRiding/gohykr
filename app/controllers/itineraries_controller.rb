@@ -32,6 +32,13 @@ class ItinerariesController < ApplicationController
       if @itinerary.save
         format.html { redirect_to @itinerary, notice: 'Itinerary was successfully created.' }
         format.json { render :show, status: :created, location: @itinerary }
+
+        origin = @itinerary.locations.new( address: params[:origin], is_origin: true )
+        origin.get_coords
+
+        destination = @itinerary.locations.new( address: params[:destination], is_origin: false )
+        destination.get_coords
+
       else
         format.html { render :new }
         format.json { render json: @itinerary.errors, status: :unprocessable_entity }
