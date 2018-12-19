@@ -3,7 +3,7 @@ import React from 'react';
 class Nav extends React.Component {
     render () {
         return (
-            <div>
+            <div className="navigation"> 
             
                 {/* { this.props.name }
                 <h1>WTF react!?</h1>     */}

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
     def index
-        @test = { name: "things" }
+        @test = { name: "about", path:./About }
     end
 end
