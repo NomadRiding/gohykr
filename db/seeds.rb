@@ -6,9 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-User.create(username: "Evgeny", password: "password")
-User.create(username: "Jonsnow", password: "password")
-User.create(username: "Arya", password: "password")
-User.create(username: "Frodo", password: "password")
-User.create(username: "Gandalf", password: "password")
+user = User.create!( email: "test@email.com",
+                    password: "password",
+                    first_name: Faker::Name.first_name,
+                    last_name: Faker::Name.last_name
+                  )
+5.times do
+  User.create([{
+    email: Faker::Name.name,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    password_digest: Faker::Number.number(5),
+    username:Faker::Name.name,
+    gender:Faker::Gender.binary_type,
+    rating: Faker::Number.between(1, 5),
+    bio: Faker::Lorem.paragraphs(1),
+    }])
+end
