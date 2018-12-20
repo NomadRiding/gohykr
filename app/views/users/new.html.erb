@@ -1,27 +1,42 @@
-<h1>Sign Up</h1>
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% stylesheet_link_tag 'application' %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions"><%= f.submit "Sign Up" %></div>
-<% end %>
+<section class="user">
+    <div class="sign-up-forms user_options-forms" id="user_options-forms">
+      <div class="user_forms-login">
+
+        <h2 class="forms_title">Sign Up</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+          <div class="forms_field">
+            <%= form_for @user do |f| %>
+              <% if @user.errors.any? %>
+                <div class="error_messages">
+                  <h2>Form is invalid</h2>
+                  <ul>
+                    <% @user.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+              <div class="forms_field">
+                <%= f.label :email %><br />
+                <%= f.text_field :email, class:'forms_field-input', placeholder:'Email' %>
+              </div>
+              <div class="forms_field">
+                <%= f.label :password %><br />
+                <%= f.password_field :password, class:'forms_field-input', placeholder:'Password' %>
+              </div>
+              <div class="forms_field">
+                <%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, class:'forms_field-input', placeholder:'Password Confirmation' %>
+              </div>
+              <div class=" actions" style="color:white;"><%= f.submit "Sign Up", class: 'forms_buttons-action' %></div>
+            <% end %>
+</div>
+</fieldset>
+</form>
+</div>
+</div>
+</section>
