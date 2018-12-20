@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/search', to:'events#search'
   post 'message', to: 'messages#create'
   get '/chatrooms', to: 'chatrooms#index'
+  get '/postaride', to: 'itineraries#new', as: 'postaride'
 
   root 'hello_world#index'
 end
