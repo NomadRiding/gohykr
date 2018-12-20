@@ -678,6 +678,10 @@ header {
     letter-spacing: 0.2rem;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   }
+
+  
+
+
   .user_registered-login:hover,
   .user_unregistered-signup:hover {
     color: rgba(34, 34, 34, 0.85);
@@ -703,6 +707,24 @@ header {
     transition: transform 0.4s ease-in-out;
     transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   }
+
+  .sign-up-forms {
+    position: absolute;
+    top: 25%;
+    left: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+    min-height: 460px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    -webkit-transform: none;
+    transform: none;
+    transition: none;
+  }
+
   .user_options-forms .user_forms-login {
     transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   }
