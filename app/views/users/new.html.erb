@@ -19,7 +19,22 @@
                   </ul>
                 </div>
               <% end %>
-
+              <%
+=begin%>
+ <div class="forms_field">
+                <%= f.label :first_name %><br />
+                <%= f.text_field :first_name, class:'forms_field-input', placeholder:'First Name' %>
+              </div>
+              <div class="forms_field">
+                <%= f.label :last_name %><br />
+                <%= f.text_field :last_name, class:'forms_field-input', placeholder:'Last Name' %>
+              </div> 
+              <div class="forms_field">
+                <%= f.label :username %><br />
+                <%= f.text_field :username, class:'forms_field-input', placeholder:'Username' %>
+              </div>                            
+<%
+=end%>
               <div class="forms_field">
                 <%= f.label :email %><br />
                 <%= f.text_field :email, class:'forms_field-input', placeholder:'Email' %>
