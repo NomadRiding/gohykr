@@ -39,6 +39,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 gem 'eventbrite'
 gem 'bootstrap'
+gem 'semantic-ui-sass'
 gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
