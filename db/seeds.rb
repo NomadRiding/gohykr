@@ -12,14 +12,29 @@ user = User.create!( email: "test@email.com",
                     last_name: Faker::Name.last_name
                   )
 5.times do
-  User.create([{
-    email: Faker::Name.name,
+  user = User.new(
+    email: Faker::Internet.unique.email,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    password_digest: Faker::Number.number(5),
-    username:Faker::Name.name,
+    password: "password",
+    username:Faker::Internet.unique.username(5..10),
     gender:Faker::Gender.binary_type,
     rating: Faker::Number.between(1, 5),
     bio: Faker::Lorem.paragraphs(1),
-    }])
+    )
+    user.save(validate: false)
+
+    2.times do
+      p Itinerary.create!(
+        # origin: Faker::Address.full_address,
+        start_date: Faker::Date.forward((1..3).to_a.sample).iso8601,
+        # destination: Faker::Address.full_address,
+        end_date: Faker::Date.forward((3..23).to_a.sample).iso8601,
+        available_seat: Faker::Number.between(1, 7),
+        description: [Faker::VForVendetta.quote, Faker::WorldOfWarcraft.quote, Faker::PrincessBride.quote, Faker::Movie.quote].sample,
+        user: user,
+      )
+      end
 end
+
+
