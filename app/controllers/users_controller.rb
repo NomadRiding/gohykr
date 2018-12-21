@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_url, notice: 'Thank you for signing up!'
     else
+      flash[:notice] = 'Unable to create user'
       render :new
     end
   end

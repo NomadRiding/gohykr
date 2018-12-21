@@ -44,6 +44,7 @@
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     line-height: 1em;
+    padding-top: 100px
   }
 
 
@@ -632,7 +633,6 @@ header {
     align-items: center;
     width: 100%;
     height: 100vh;
-    background: url("./images/car-ride.jpg") no-repeat center;
     background-size: cover;
   }
   .user_options-container {
@@ -720,7 +720,7 @@ header {
     margin-left: auto;
     margin-right: auto;
     width: 550px;
-    min-height: 460px;
+    min-height: 460px!important;
     background-color: #fff;
     border-radius: 3px;
     box-shadow: 2px 0 15px rgba(0, 0, 0, 0.25);
