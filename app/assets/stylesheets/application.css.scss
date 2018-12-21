@@ -22,7 +22,7 @@
  */
 
 
-/********* TABLE OF CONTENTS 
+/********* TABLE OF CONTENTS
 
 1. Nav Bar & Logo
 2. LogIn Page
@@ -39,7 +39,7 @@
 * {
     box-sizing: border-box;
   }
-  
+
   body {
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
@@ -488,7 +488,7 @@ header {
 
 
 /******************************************* 2. LOGIN PAGE ******************************************/
-  
+
   button {
     background-color: transparent;
     padding: 0;
@@ -500,7 +500,7 @@ header {
   h2 {
       font-weight: normal;
   }
-  
+
   fieldset {
       border: none;
   }
@@ -542,7 +542,7 @@ header {
     letter-spacing: 0.1rem;
     color: #ccc;
   }
-  
+
   /**
    * Bounce to the left side
    */
@@ -646,7 +646,7 @@ header {
     background-color: rgba(34, 34, 34, 0.85);
     border-radius: 3px;
   }
-  
+
   /**
    * Registered and Unregistered user box and text
    */
@@ -657,20 +657,20 @@ header {
     color: #fff;
     font-weight: 300;
   }
-  
+
   .user_registered-title,
   .user_unregistered-title {
     margin-bottom: 15px;
     font-size: 1.66rem;
     line-height: 1em;
   }
-  
+
   .user_unregistered-text,
   .user_registered-text {
     font-size: 0.83rem;
     line-height: 1.4em;
   }
-  
+
   .user_registered-login,
   .user_unregistered-signup {
     margin-top: 30px;
@@ -684,7 +684,7 @@ header {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   }
 
-  
+
 
 
   .user_registered-login:hover,
@@ -692,7 +692,7 @@ header {
     color: rgba(34, 34, 34, 0.85);
     background-color: #ccc;
   }
-  
+
   /**
    * Login and signup forms
    */
@@ -720,11 +720,9 @@ header {
     margin-left: auto;
     margin-right: auto;
     width: 550px;
-    min-height: 460px!important;
     background-color: #fff;
     border-radius: 3px;
     box-shadow: 2px 0 15px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
     -webkit-transform: none;
     transform: none;
     transition: none;
@@ -815,7 +813,7 @@ header {
     opacity: 1;
     visibility: visible;
   }
-  
+
   /**
    * Triggers
    */
@@ -837,7 +835,7 @@ header {
     -webkit-animation: bounceRight 1s forwards;
             animation: bounceRight 1s forwards;
   }
-  
+
   /**
    * Responsive 990px
    */
@@ -855,7 +853,7 @@ header {
     .user_options-forms .user_forms-login {
       top: 40px;
     }
-  
+
     .user_options-registered,
     .user_options-unregistered {
       padding: 50px 45px;
@@ -864,7 +862,7 @@ header {
 
 
   /************************************ END ****************************************/
-  
+
 /******************************************* 3. SIGN UP PAGE ******************************************/
 
 
