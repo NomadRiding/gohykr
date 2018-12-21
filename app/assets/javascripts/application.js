@@ -17,9 +17,15 @@
 //= require semantic-ui
 //= require jquery
 
-$(document).on('turbolinks:load', function() {
-    $('.ui.dropdown').dropdown();
-    $('.message .close').on('click', function() {
-      $(this).closest('.message').transition('fade');
-    });
-  })
+// $(document).on('turbolinks:load', function() {
+//     $('.ui.dropdown').dropdown();
+//     $('.message .close').on('click', function() {
+//       $(this).closest('.message').transition('fade');
+//     });
+//   })
+
+  $('.forms_buttons-action').removeAttr('data-disable-with');
+
+//   $button = $('forms_buttons-action')
+// $.rails.enableElement($button)
+// $button.removeAttr('disabled')
