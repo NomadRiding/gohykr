@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :update, :destroy]
 
   def index
     @users = User.all
@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_create_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to root_url, notice: 'Thank you for signing up!'
     else
       flash[:notice] = 'Unable to create user'
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = current_user
   end
 
   def update
@@ -49,7 +51,7 @@ class UsersController < ApplicationController
   end
 
   def user_profile_update_params
-    params.require(:user).permit(:first_name, :last_name, :username, :gender, :bio )
+    params.require(:user).permit(:first_name, :last_name, :username, :gender, :bio, :avatar_image )
   end
 
   def set_user
