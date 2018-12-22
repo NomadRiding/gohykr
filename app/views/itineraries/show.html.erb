@@ -15,7 +15,7 @@
 
   <p>
     <strong>Start location:</strong>
-    <%= @itinerary.locations.origin.address %>
+    <%= @itinerary.locations.origin.first %>
   </p>
   <p>
     <strong>Start date:</strong>
@@ -24,7 +24,7 @@
 
    <p>
     <strong>End location:</strong>
-    <%= @itinerary.locations.destination.address %>
+    <%= @itinerary.locations.destination.first %>
   </p>
   <p>
     <strong>End date:</strong>

@@ -53,6 +53,16 @@ class ItinerariesController < ApplicationController
       if @itinerary.update(itinerary_params)
         format.html { redirect_to @itinerary, notice: 'Itinerary was successfully updated.' }
         format.json { render :show, status: :ok, location: @itinerary }
+
+        if params[:origin]
+          @itinerary.locations.origin.first.address = params[:origin]
+          @itinerary.locations.origin.first.get_coords
+        end
+        if params[:destination]
+          @itinerary.locations.destination.first.address = params[:destination]
+          @itinerary.locations.destination.first.get_coords
+        end
+
       else
         format.html { render :edit }
         format.json { render json: @itinerary.errors, status: :unprocessable_entity }

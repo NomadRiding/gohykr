@@ -25,7 +25,7 @@ user = User.create!( email: "test@email.com",
     user.save(validate: false)
 
     2.times do
-      p Itinerary.create!(
+      it = Itinerary.create!(
         # origin: Faker::Address.full_address,
         start_date: Faker::Date.forward((1..3).to_a.sample).iso8601,
         # destination: Faker::Address.full_address,
@@ -34,7 +34,9 @@ user = User.create!( email: "test@email.com",
         description: [Faker::VForVendetta.quote, Faker::WorldOfWarcraft.quote, Faker::PrincessBride.quote, Faker::Movie.quote].sample,
         user: user,
       )
-      end
+      it.location.create( address: "Miami, FL", is_origin: true)
+      it.location.create( address: "Tampa, FL", is_origin: false)
+    end
 end
 
 
