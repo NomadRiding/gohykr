@@ -100,12 +100,5 @@ class ItinerariesController < ApplicationController
     params.require(:itinerary).permit(:start_date, :end_date, :available_seat, :projected_eta, :description, :user_id, :avatar_image)
   end
 
-  def build_pagination(obj)
-    page        = (params[:page] || 1).to_i
-    per_page    = 7
-    total_pages = (obj.count.to_f / per_page).ceil
-    total_pages = 1 if total_pages.zero?
-    obj.paginate(page: page, per_page: per_page)
-  end
 end
 
