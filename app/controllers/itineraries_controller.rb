@@ -6,12 +6,26 @@ class ItinerariesController < ApplicationController
   def index
     @itineraries = Itinerary.all.order(:start_date)
     @current_user = User.find(session[:user_id])
+    respond_to do |format|
+      format.html do
+        @itineraries = @itineraries.map{ |i| ::ItineraryPresenter.new(i) }
+      end
+      format.json do
+        page        = (params[:page] || 1).to_i
+        per_page    = 5
+        total_pages = (@itineraries.count.to_f / per_page).ceil
+        total_pages = 1 if total_pages.zero?
+        @itineraries      = @itineraries.paginate(page: page, per_page: per_page)
+        render json: { itineraries: @itineraries, page: page, totalPages: total_pages }
+      end
+    end
   end
 
   # GET /itineraries/1
   # GET /itineraries/1.json
   def show
     @current_user = User.find(session[:user_id])
+    @itinerary = ::ItineraryPresenter.new(@itinerary)
   end
 
   # GET /itineraries/new
@@ -55,12 +69,12 @@ class ItinerariesController < ApplicationController
         format.json { render :show, status: :ok, location: @itinerary }
 
         if params[:origin]
-          @itinerary.locations.origin.first.address = params[:origin]
-          @itinerary.locations.origin.first.get_coords
+          @itinerary.locations[0].address = params[:origin]
+          @itinerary.locations[0].get_coords
         end
         if params[:destination]
-          @itinerary.locations.destination.first.address = params[:destination]
-          @itinerary.locations.destination.first.get_coords
+          @itinerary.locations[0].address = params[:destination]
+          @itinerary.locations[0].get_coords
         end
 
       else

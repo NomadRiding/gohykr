@@ -13,6 +13,8 @@ gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'geocoder', '~> 1.5'
 # Geocoder gem for latitude and longitude
+gem 'will_paginate-bootstrap4'
+# pagination of the page
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

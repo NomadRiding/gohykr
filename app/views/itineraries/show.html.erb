@@ -1,10 +1,10 @@
 
-<% if not @itinerary.avatar_image.attachment.nil? %>
+<% unless @itinerary.avatar_image.attachment.nil? %>
 <div class="containShow">
   <div class="showPicture">
     <div class="col-md-8">
       <div class="text-center imageHolder">
-          <%= image_tag @itinerary.avatar_image, height: 250 %>
+          <%= image_tag @itinerary.avatar, height: 250 %>
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
 
   <p>
     <strong>Start location:</strong>
-    <%= @itinerary.locations.origin.first %>
+    <%= @itinerary.start_location %>
   </p>
   <p>
     <strong>Start date:</strong>
@@ -24,7 +24,7 @@
 
    <p>
     <strong>End location:</strong>
-    <%= @itinerary.locations.destination.first %>
+    <%= @itinerary.end_location %>
   </p>
   <p>
     <strong>End date:</strong>
@@ -38,7 +38,7 @@
 
   <p>
     <strong>Projected eta:</strong>
-    <%= @itinerary.projected_eta %>
+    <%= @itinerary.eta %>
   </p>
 
   <p>
@@ -48,7 +48,7 @@
 
   <p>
     <strong>User:</strong>
-    <%= @itinerary.user.first_name %>
+    <%= @itinerary.username %>
   </p>
 <div>
   <% if @current_user.id == @itinerary.user.id %>
