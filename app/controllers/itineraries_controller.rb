@@ -9,13 +9,13 @@ class ItinerariesController < ApplicationController
     respond_to do |format|
       format.html do
         @itineraries = @itineraries.map{ |i| ::ItineraryPresenter.new(i) }
-      end
-      format.json do
         page        = (params[:page] || 1).to_i
-        per_page    = 5
+        per_page    = 7
         total_pages = (@itineraries.count.to_f / per_page).ceil
         total_pages = 1 if total_pages.zero?
         @itineraries      = @itineraries.paginate(page: page, per_page: per_page)
+      end
+      format.json do
         render json: { itineraries: @itineraries, page: page, totalPages: total_pages }
       end
     end
