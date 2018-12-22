@@ -9,11 +9,7 @@ class ItinerariesController < ApplicationController
     respond_to do |format|
       format.html do
         @itineraries = @itineraries.map{ |i| ::ItineraryPresenter.new(i) }
-        page        = (params[:page] || 1).to_i
-        per_page    = 7
-        total_pages = (@itineraries.count.to_f / per_page).ceil
-        total_pages = 1 if total_pages.zero?
-        @itineraries      = @itineraries.paginate(page: page, per_page: per_page)
+        @itineraries = build_pagination(@itineraries)
       end
       format.json do
         render json: { itineraries: @itineraries, page: page, totalPages: total_pages }
@@ -36,7 +32,6 @@ class ItinerariesController < ApplicationController
   # GET /itineraries/1/edit
   def edit
   end
-
   # POST /itineraries
   # POST /itineraries.json
   def create
@@ -95,13 +90,22 @@ class ItinerariesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_itinerary
-      @itinerary = Itinerary.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_itinerary
+    @itinerary = Itinerary.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def itinerary_params
-      params.require(:itinerary).permit(:start_date, :end_date, :available_seat, :projected_eta, :description, :user_id, :avatar_image)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def itinerary_params
+    params.require(:itinerary).permit(:start_date, :end_date, :available_seat, :projected_eta, :description, :user_id, :avatar_image)
+  end
+
+  def build_pagination(obj)
+    page        = (params[:page] || 1).to_i
+    per_page    = 7
+    total_pages = (obj.count.to_f / per_page).ceil
+    total_pages = 1 if total_pages.zero?
+    obj.paginate(page: page, per_page: per_page)
+  end
 end
+
