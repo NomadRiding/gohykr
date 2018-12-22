@@ -5,8 +5,10 @@
       <th scope="col">End date</th>
       <th scope="col">Available seat</th>
       <th scope="col">Projected eta</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Destination</th>
       <th scope="col">Description</th>
-      <th scope="col">User</th>
+      <th scope="col">Username</th>
       <th scope="col" colspan="3"></th>
     </tr>
   </thead>
@@ -17,12 +19,16 @@
         <td><%= itinerary.start_date %></td>
         <td><%= itinerary.end_date %></td>
         <td><%= itinerary.available_seat %></td>
-        <td><%= itinerary.projected_eta %></td>
-        <td><%= itinerary.description %></td>
-        <td><%= itinerary.user.first_name %></td>
+        <td><%= itinerary.eta %></td>
+        <td><%= itinerary.start_location %>
+        <td><%= itinerary.end_location %>
+        <td><%= itinerary.short_description %></td>
+        <td><%= itinerary.username %></td>
         <td><%= link_to 'Show', itinerary %></td>
-        <td><%= link_to 'Edit', edit_itinerary_path(itinerary) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+
+<%= will_paginate @itineraries %>

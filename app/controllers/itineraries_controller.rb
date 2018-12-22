@@ -6,12 +6,22 @@ class ItinerariesController < ApplicationController
   def index
     @itineraries = Itinerary.all.order(:start_date)
     @current_user = User.find(session[:user_id])
+    respond_to do |format|
+      format.html do
+        @itineraries = @itineraries.map{ |i| ::ItineraryPresenter.new(i) }
+        @itineraries = build_pagination(@itineraries)
+      end
+      format.json do
+        render json: { itineraries: @itineraries, page: page, totalPages: total_pages }
+      end
+    end
   end
 
   # GET /itineraries/1
   # GET /itineraries/1.json
   def show
     @current_user = User.find(session[:user_id])
+    @itinerary = ::ItineraryPresenter.new(@itinerary)
   end
 
   # GET /itineraries/new
@@ -22,7 +32,6 @@ class ItinerariesController < ApplicationController
   # GET /itineraries/1/edit
   def edit
   end
-
   # POST /itineraries
   # POST /itineraries.json
   def create
@@ -53,6 +62,16 @@ class ItinerariesController < ApplicationController
       if @itinerary.update(itinerary_params)
         format.html { redirect_to @itinerary, notice: 'Itinerary was successfully updated.' }
         format.json { render :show, status: :ok, location: @itinerary }
+
+        if params[:origin]
+          @itinerary.locations[0].address = params[:origin]
+          @itinerary.locations[0].get_coords
+        end
+        if params[:destination]
+          @itinerary.locations[0].address = params[:destination]
+          @itinerary.locations[0].get_coords
+        end
+
       else
         format.html { render :edit }
         format.json { render json: @itinerary.errors, status: :unprocessable_entity }
@@ -71,13 +90,15 @@ class ItinerariesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_itinerary
-      @itinerary = Itinerary.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_itinerary
+    @itinerary = Itinerary.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def itinerary_params
-      params.require(:itinerary).permit(:start_date, :end_date, :available_seat, :projected_eta, :description, :user_id, :avatar_image)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def itinerary_params
+    params.require(:itinerary).permit(:start_date, :end_date, :available_seat, :projected_eta, :description, :user_id, :avatar_image)
+  end
+
 end
+

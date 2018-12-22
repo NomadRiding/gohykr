@@ -25,16 +25,16 @@ user = User.create!( email: "test@email.com",
     user.save(validate: false)
 
     2.times do
-      p Itinerary.create!(
-        # origin: Faker::Address.full_address,
+      it = Itinerary.create!(
         start_date: Faker::Date.forward((1..3).to_a.sample).iso8601,
-        # destination: Faker::Address.full_address,
         end_date: Faker::Date.forward((3..23).to_a.sample).iso8601,
         available_seat: Faker::Number.between(1, 7),
         description: [Faker::VForVendetta.quote, Faker::WorldOfWarcraft.quote, Faker::PrincessBride.quote, Faker::Movie.quote].sample,
         user: user,
       )
-      end
+      it.locations.create( address: ["Miami,FL","New Orleans, LA", "Nashville, TN","Albuquerque, NM","Tucson, AZ", "Sacramento, CA", "Charlotte, NC", "Seattle, WA", "Dallas,TX", "Las Vegas, NV", "Honolulu, HI", "Fresno, CA", "Chicago, IL" ].sample, is_origin: true)
+      it.locations.create( address: ["Miami,FL","New Orleans, LA", "Nashville, TN","Albuquerque, NM","Tucson, AZ", "Sacramento, CA", "Charlotte, NC", "Seattle, WA", "Dallas,TX", "Las Vegas, NV", "Honolulu, HI", "Fresno, CA", "Chicago, IL" ].sample, is_origin: false)
+    end
 end
 
 

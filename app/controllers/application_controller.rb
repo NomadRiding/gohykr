@@ -16,4 +16,12 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+
+  def build_pagination(obj)
+    page        = (params[:page] || 1).to_i
+    per_page    = 7
+    total_pages = (obj.count.to_f / per_page).ceil
+    total_pages = 1 if total_pages.zero?
+    obj.paginate(page: page, per_page: per_page)
+  end
 end
