@@ -10,7 +10,7 @@ user = User.create!( email: "test@email.com",
                     password: "password",
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
-                    username:Faker::Internet.unique.username(5..10),
+                    username: Faker::Internet.unique.username(5..10),
                   )
 5.times do
   user = User.new(
