@@ -25,6 +25,16 @@ class ItineraryPresenter < SimpleDelegator
     self.description.truncate(45, separator: /\s/)
   end
 
+  def is_owner?(user)
+    user.id == self.user.id
+  end
+
+  def joinable?(user)
+    self.is_owner?(user) ||
+      self.attendees.map(&:user_id).include?(user.id) ||
+      self.available_seat <= 0
+  end
+
   private
 
   def format(date)

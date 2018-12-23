@@ -20,7 +20,6 @@ class ItinerariesController < ApplicationController
   # GET /itineraries/1
   # GET /itineraries/1.json
   def show
-    @current_user = User.find(session[:user_id])
     @itinerary = ::ItineraryPresenter.new(@itinerary)
   end
 

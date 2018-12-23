@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :itineraries
+  get 'attendees/create'
+  resources :itineraries do
+    resources :attendees, only: :create
+  end
+
   get 'sessions/new'
   resources :users
   resources :sessions
