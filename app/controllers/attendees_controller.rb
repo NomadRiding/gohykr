@@ -1,6 +1,5 @@
 class AttendeesController < ApplicationController
   def create
-    # binding.pry
     itinerary = Itinerary.find(params[:itinerary_id])
     attendee = itinerary.attendees.build(user: current_user)
     if attendee.save
