@@ -21,7 +21,6 @@ class ItinerariesController < ApplicationController
   # GET /itineraries/1.json
   def show
     @itinerary = ::ItineraryPresenter.new(@itinerary)
-    # Attendee.create(user: _, itinerary: _)
   end
 
   # GET /itineraries/new
