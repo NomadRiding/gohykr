@@ -6,5 +6,28 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
+import React from 'react'
+import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
+// import HelloWorld from './HelloWorld'
+// import Itineraries from './Itineraries'
+// import Filters from './Filters'
 
-console.log('Hello World from Webpacker')
+const Hello = props => (
+  <div>Hello {props.name}! from Leila</div>
+)
+
+Hello.defaultProps = {
+  name: 'David'
+}
+
+Hello.propTypes = {
+  name: PropTypes.string
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+    <Hello name="React" />,
+    document.body.appendChild(document.createElement('div')),
+  )
+})
