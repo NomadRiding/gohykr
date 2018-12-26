@@ -4,18 +4,31 @@ class ItinerariesController < ApplicationController
   # GET /itineraries
   # GET /itineraries.json
   def index
-    @itineraries = Itinerary.all.order(:start_date)
-    @current_user = User.find(session[:user_id])
-    respond_to do |format|
-      format.html do
-        @itineraries = @itineraries.map{ |i| ::ItineraryPresenter.new(i) }
-        @itineraries = build_pagination(@itineraries)
+    unless @current_user == nil
+      @itineraries = Itinerary.all.order(:start_date)
+      @current_user = User.find(session[:user_id])
+      respond_to do |format|
+        format.html do
+          @itineraries = @itineraries.map{ |i| ::ItineraryPresenter.new(i) }
+          @itineraries = build_pagination(@itineraries)
+        end
+        format.json do
+          render json: { itineraries: @itineraries, page: page, totalPages: total_pages }
+        end
       end
-      format.json do
-        render json: { itineraries: @itineraries, page: page, totalPages: total_pages }
+    else
+      @itineraries = Itinerary.all.order(:start_date)
+      respond_to do |format|
+        format.html do
+          @itineraries = @itineraries.map{ |i| ::ItineraryPresenter.new(i) }
+          @itineraries = build_pagination(@itineraries)
+        end
+        format.json do
+          render json: { itineraries: @itineraries, page: page, totalPages: total_pages }
+        end
       end
     end
-  end
+end
 
   # GET /itineraries/1
   # GET /itineraries/1.json
