@@ -24,7 +24,11 @@
         <td><%= itinerary.end_location %>
         <td><%= itinerary.short_description %></td>
         <td><%= itinerary.username %></td>
-        <td><%= link_to 'Show', itinerary %></td>
+        <% unless current_user == nil %>
+          <td><%= link_to 'Show', itinerary %></td>
+        <% else %>
+          <td><%= link_to 'Log In', login_path %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
