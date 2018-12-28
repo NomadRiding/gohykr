@@ -1,10 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GoHykr</title>
+    <% stylesheet_link_tag 'application' %>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery.nanoscroller/0.8.7/css/nanoscroller.min.css'>
+  </head>
 
-<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-<% stylesheet_link_tag 'application' %>
-
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery.nanoscroller/0.8.7/css/nanoscroller.min.css'>
-
+<body>
 <%= render 'chatrooms/messages' %>
 
 <div class="wrap" data-pos="0">
@@ -144,7 +147,7 @@
 		</div>
 
 	</div>
-
+</body>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.nanoscroller/0.8.7/javascripts/jquery.nanoscroller.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
@@ -481,4 +484,4 @@
   })();
   </script>
 
-
+</html>
