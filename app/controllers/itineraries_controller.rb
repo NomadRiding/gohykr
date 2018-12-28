@@ -24,7 +24,10 @@ class ItinerariesController < ApplicationController
           @itineraries = build_pagination(@itineraries)
         end
         format.json do
-          render json: { itineraries: @itineraries, page: page, totalPages: total_pages }
+          page      = (params[:page] || 1).to_i
+          per_page  = 5
+          @itineraries = @itineraries.paginate(page: page, per_page: per_page)
+          render json: { itineraries: @itineraries }
         end
       end
     end
