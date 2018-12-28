@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   get '/chatrooms', to: 'chatrooms#index'
   get '/postaride', to: 'itineraries#new', as: 'postaride'
   get '/about', to: "about#index", as: 'about'
-
+  get '/faq', to: "faq#index", as: 'faq'
   root 'hello_world#index'
 end
