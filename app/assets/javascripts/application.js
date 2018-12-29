@@ -26,6 +26,50 @@
 
   $('.forms_buttons-action').removeAttr('data-disable-with');
 
+  $( document ).ready(function() {
+      console.log( "ready!" );
+      $("#search-form").submit(function(event){
+          event.preventDefault();
+
+
+          let params = {
+            search_term: $('#search_term').val(),
+            location: $('#location').val(),
+            date: $('#date').val()
+          }
+
+          console.log(params);
+          let url = "/search.json?" + $.param(params)
+          fetch(url)
+            .then(function(response) {
+              return response.json();
+            })
+            .then(function(myJson) {
+              for(var i = 0; i < myJson.length; i++) {
+                var obj = myJson[i];
+                console.log(obj.id);
+
+                var html = '<div class="card" style="width: 18rem;">\
+                  <img class="card-img-top" src=  alt="Card image cap">\
+                  <div class="card-body">\
+                    <h5 class="card-title">'+obj["name"]["text"]+'</h5>\
+                    <p class="card-text">'+obj["description"]["text"]+'</p>\
+                    <a href="#" class="btn btn-primary"></a>\
+                  </div>\
+                </div>'
+
+              $(".containingEvents").append(html)
+              }
+            });
+
+
+        });
+  });
+
+  
+
+console.log(document.getElementsByClassName("form-group"));
+
 //   $button = $('forms_buttons-action')
 // $.rails.enableElement($button)
 // $button.removeAttr('disabled')
