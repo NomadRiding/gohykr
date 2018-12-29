@@ -10,21 +10,30 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// about supported directives.
+//
 //= require rails-ujs
+//= require jquery
 //= require activestorage
 //= require turbolinks
 //= require_tree .
 //= require semantic-ui
 //= require jquery
 
-// $(document).on('turbolinks:load', function() {
-//     $('.ui.dropdown').dropdown();
-//     $('.message .close').on('click', function() {
-//       $(this).closest('.message').transition('fade');
-//     });
-//   })
 
-  $('.forms_buttons-action').removeAttr('data-disable-with');
+
+// $(document).on('turbolinks:load', function() {
+  $('.message .close').on('click', function() {
+    $(this).closest('.message').transition('fade');
+  });
+// })
+
+$('.close').click(function() {
+  $('.message').css({
+      'display': 'none',
+  });
+}); 
+
 
   $( document ).ready(function() {
       console.log( "ready!" );
@@ -73,3 +82,9 @@ console.log(document.getElementsByClassName("form-group"));
 //   $button = $('forms_buttons-action')
 // $.rails.enableElement($button)
 // $button.removeAttr('disabled')
+
+$('body').delegate('.c-faq', 'click', function(){
+  $('.c-faq').removeClass('c-faq--active');
+  $(this).addClass('c-faq--active');
+});
+

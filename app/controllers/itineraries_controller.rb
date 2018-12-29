@@ -1,11 +1,11 @@
 class ItinerariesController < ApplicationController
+  skip_before_action :authorize, only: :index
   before_action :set_itinerary, only: [:show, :edit, :update, :destroy]
 
   # GET /itineraries
   # GET /itineraries.json
   def index
     @itineraries = Itinerary.all.order(:start_date)
-    @current_user = User.find(session[:user_id])
     respond_to do |format|
       format.html do
         @itineraries = @itineraries.map{ |i| ::ItineraryPresenter.new(i) }
@@ -15,7 +15,7 @@ class ItinerariesController < ApplicationController
         render json: { itineraries: @itineraries, page: page, totalPages: total_pages }
       end
     end
-  end
+end
 
   # GET /itineraries/1
   # GET /itineraries/1.json
@@ -41,11 +41,11 @@ class ItinerariesController < ApplicationController
         format.html { redirect_to @itinerary, notice: 'Itinerary was successfully created.' }
         format.json { render :show, status: :created, location: @itinerary }
 
-        origin = @itinerary.locations.new( address: params[:origin], is_origin: true )
-        origin.get_coords
+        # origin = @itinerary.locations.new( address: params[:origin], is_origin: true )
+        # origin.get_coords
 
-        destination = @itinerary.locations.new( address: params[:destination], is_origin: false )
-        destination.get_coords
+        # destination = @itinerary.locations.new( address: params[:destination], is_origin: false )
+        # destination.get_coords
 
       else
         format.html { render :new }
@@ -98,6 +98,5 @@ class ItinerariesController < ApplicationController
   def itinerary_params
     params.require(:itinerary).permit(:start_date, :end_date, :available_seat, :projected_eta, :description, :user_id, :avatar_image)
   end
-
 end
 

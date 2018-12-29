@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   post 'message', to: 'messages#create'
   get '/chatrooms', to: 'chatrooms#index'
   get '/postaride', to: 'itineraries#new', as: 'postaride'
+  get '/about', to: "about#index", as: 'about'
+  get '/faq', to: "faq#index", as: 'faq'
+  get '/error', to: "error#index", as: 'error'
 
   root 'hello_world#index'
 end

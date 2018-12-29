@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorize, except: :destroy
+
   def new
   end
 
@@ -6,9 +8,13 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_url, notice: 'Logged in!'
+      flash[:success] = "You have successfully logged in"
+
+      redirect_to root_path
+      # , notice: 'Logged in!'
     else
-      flash.now.alert = 'Email or password is invalid'
+      # flash.now.alert = 'Email or password is invalid'
+      flash[:error] = "Email or password is invalid"
       render :new
     end
   end

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authorize, only: [:create, :new]
   before_action :set_user, only: [:show, :update, :destroy]
 
   def index
@@ -6,6 +7,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    unless @current_user = User.find(session[:user_id]) == nil
+         @current_user = User.find(session[:user_id])
+    else
+      @current_user = nil
+    end
   end
 
   def new
@@ -29,7 +35,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_profile_update_params)
-      flash[:notice] = "Pofile information saved."
+      flash[:notice] = "Profile information saved."
     else
       flash[:alertt] = "There was an error. Please try again."
     end
