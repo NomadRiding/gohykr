@@ -1,4 +1,5 @@
-class FaqController < ApplicationController
+class FaqController < PublicController
+
     def index
     end
 end
