@@ -966,9 +966,23 @@ input::placeholder {
 
 /***************** 4. Event Search *************************************/
 
+
+
+  /************************************ END ****************************************/
+
 .containingEvents {
   margin-top: 10vh;
 }
+
+.containingEvents {
+  margin-top: 10vh;
+  height: 100%;
+}
+
+.card {
+  height: 100px;
+  overflow: auto;
+
 
 /********************** 5. About Us ***************************************/
 
