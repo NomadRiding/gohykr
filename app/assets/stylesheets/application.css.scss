@@ -26,8 +26,10 @@
 
 1. Nav Bar & Logo
 2. LogIn Page
-3. SignUp Page
-
+3. Sign Up Page
+4. Events Page
+5. About Us
+6. Post a Ride
 
 *********/
 
@@ -44,7 +46,7 @@ body {
   padding-top: 100px
 }
 
-/******************************************* 1. NAV TAB & LOGO **************************************/
+/**************************************** 1. Nav Bar & Logo **************************************/
 
 .logo-page {
   width: 27em;
@@ -552,9 +554,8 @@ header.collapsed nav ul li::after {
   height: 2px;
 }
 
-/******************************************* END  ******************************************/
 
-/******************************************* 2. LOGIN PAGE ******************************************/
+/************************************* 2. Login Page ******************************************/
 
 button {
   background-color: transparent;
@@ -960,15 +961,10 @@ input::placeholder {
   }
 }
 
-/************************************ END ****************************************/
 
-/******************************************* 3. SIGN UP PAGE ******************************************/
+/************************************* 3. Sign Up ******************************************/
 
-/***************** 4. Event Search *************************************/
-
-
-
-  /************************************ END ****************************************/
+/******************************* 4. Event Search *************************************/
 
 .containingEvents {
   margin-top: 10vh;
@@ -984,7 +980,7 @@ input::placeholder {
   overflow: auto;
 }
 
-/********************** 5. About Us ***************************************/
+/******************************** 5. About Us ***************************************/
 
 #containAbout {
   margin-left: 10px;
@@ -1020,8 +1016,57 @@ input::placeholder {
   padding: 0;
 }
 
-/******************************************** ABOUT US ***********************************************/
+/******************************** 5. About Us ***************************************/
 
-.nameTitle {
-  margin-left: 2vw;
+#containAbout {
+  margin-left: 10px;
+  margin-bottom: 5vh;
+  height: 90vh;
+  overflow: auto;
+}
+
+.groupImages {
+  display: flex;
+  justify-content: space-around;
+  margin: 5rem;
+}
+
+.stitched {
+  padding: 15px; // margin: 10px;
+  background: #e7e7e7;
+  color: #fff;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1.3em;
+  border: 2px dashed #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 0 4px #e7e7e7, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+  text-shadow: -1px -1px #e7e7e7;
+  font-weight: normal;
+  width: 18vw;
+}
+
+.images {
+  width: 16vw;
+  border-radius: 25px;
+  padding: 0;
+}
+
+/********************** 6. Post a Ride ************************/
+
+.ride-forms {
+  position: absolute;
+  top: 38%;
+  left: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 70px;
+  width: 550px;
+  height: 90%;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.25);
+  -webkit-transform: none;
+  transform: none;
+  transition: none;
 }
