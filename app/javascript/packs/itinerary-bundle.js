@@ -1,7 +1,8 @@
-// import React-On-Rails from 'react-on-rails';
+import ReactOnRails from 'react-on-rails';
 
-// import Itineraries from '../bundles/Itineraries/components/Itineraries';
+import Itineraries from '../bundles/Itineraries/components/Itineraries';
 
-// ReactOnRails.register({
-//   Itineraries,
-// });
+// This is how react_on_rails can see the Itineraries in the browser.
+ReactOnRails.register({
+  Itineraries
+});

@@ -12,10 +12,27 @@ class ItinerariesController < ApplicationController
         @itineraries = build_pagination(@itineraries)
       end
       format.json do
-        render json: { itineraries: @itineraries, page: page, totalPages: total_pages }
+        render json: {
+          itineraries: @itineraries.map do |itinerary|
+            {
+              properties: {
+                id: itinerary.id,
+                start_date: itinerary.start_date,
+                end_date: itinerary.end_date,
+                available_seat: itinerary.available_seat,
+                description: itinerary.description,
+                user: itinerary.user,
+                start_loc: itinerary.locations.where(is_origin: true).first.address,
+                end_loc: itinerary.locations.where(is_origin: false).first.address,
+                eta:  helpers.distance_of_time_in_words(format(itinerary.start_date), format(itinerary.end_date)),
+              }
+            }
+          end
+         }
       end
     end
 end
+
 
   # GET /itineraries/1
   # GET /itineraries/1.json
