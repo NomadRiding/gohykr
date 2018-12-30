@@ -27,7 +27,9 @@
 1. Nav Bar & Logo
 2. LogIn Page
 3. SignUp Page
-
+4. Event Search
+5. About Us
+6. Post a Ride
 
 *********/
 
@@ -44,7 +46,7 @@ body {
   padding-top: 100px
 }
 
-/******************************************* 1. NAV TAB & LOGO **************************************/
+/********************************** 1. Nav Bar & Logo ************************************/
 
 .logo-page {
   width: 27em;
@@ -552,9 +554,8 @@ header.collapsed nav ul li::after {
   height: 2px;
 }
 
-/******************************************* END  ******************************************/
 
-/******************************************* 2. LOGIN PAGE ******************************************/
+/*********************** 2. Login  *************************************/
 
 button {
   background-color: transparent;
@@ -714,7 +715,7 @@ input::placeholder {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 85vh;
   background-size: cover;
 }
 
@@ -803,6 +804,7 @@ input::placeholder {
   margin-left: auto;
   margin-right: auto;
   width: 550px;
+  height: 65%;
   background-color: #fff;
   border-radius: 3px;
   box-shadow: 2px 0 15px rgba(0, 0, 0, 0.25);
@@ -810,6 +812,7 @@ input::placeholder {
   transform: none;
   transition: none;
 }
+
 
 .user_options-forms .user_forms-login {
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
@@ -960,17 +963,15 @@ input::placeholder {
   }
 }
 
-/************************************ END ****************************************/
+/************************* 3. Sign Up ******************************************/
 
-/******************************************* 3. SIGN UP PAGE ******************************************/
-
-/***************** 4. Event Search *************************************/
+/************************* 4. Event Search *************************************/
 
 .containingEvents {
   margin-top: 10vh;
 }
 
-/********************** 5. About Us ***************************************/
+/************************* 5. About Us ***************************************/
 
 #containAbout {
   margin-left: 10px;
@@ -1004,4 +1005,25 @@ input::placeholder {
   width: 16vw;
   border-radius: 25px;
   padding: 0;
+}
+
+
+/********************** 6. Post a Ride ************************/
+
+
+.ride-forms {
+  position: absolute;
+  top: 38%;
+  left: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 70px;
+  width: 550px;
+  height: 90%;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.25);
+  -webkit-transform: none;
+  transform: none;
+  transition: none;
 }

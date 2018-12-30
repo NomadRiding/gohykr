@@ -4,7 +4,7 @@
   <div class="showPicture">
     <div class="col-md-8">
       <div class="text-center imageHolder">
-          <%= image_tag @itinerary.avatar, height: 250 %>
+        <%= image_tag @itinerary.avatar, height: 250 %>
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@
     <%= @itinerary.start_date %>
   </p>
 
-   <p>
+  <p>
     <strong>End location:</strong>
     <%= @itinerary.end_location %>
   </p>
@@ -67,7 +67,7 @@
     <% end %>
     <% unless @itinerary.joinable?(current_user) %>
       <div class="btn btn-primary">
-          <td><%= link_to 'Join', itinerary_attendees_path(@itinerary), method: :post %></td>
+        <td><%= link_to 'Join', itinerary_attendees_path(@itinerary), method: :post %></td>
       </div>
     <% end %>
     <% if @itinerary.is_owner?(current_user) %>

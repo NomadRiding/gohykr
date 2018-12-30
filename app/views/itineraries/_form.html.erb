@@ -1,75 +1,85 @@
-<%= form_with(model: itinerary, local: true) do |form| %>
-  <% if itinerary.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(itinerary.errors.count, "error") %> prohibited this itinerary from being saved:</h2>
+<section class="user">
+  <div class="user_options-forms ride-forms" id="user_options-forms">
+    <div class="user_forms-login">  
+  
+    <%= form_with(model: itinerary, local: true) do |form| %>
+      <fieldset class="forms_fieldset">
+        <div class="forms_field">
+        <% if itinerary.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(itinerary.errors.count, "error") %> prohibited this itinerary from being saved:</h2>
 
-      <ul>
-      <% itinerary.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+            <ul>
+            <% itinerary.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field form-group">
+          <div class="col-md-8">
+            <strong><%= label_tag :origin, "Origin", class: "col-lg-3" %></strong>
+            <%= text_field_tag :origin, nil,  class:'forms_field-input' %>
+          </div>
+        </div>
+
+        <div class="field form-group">
+          <div class="col-md-8">
+            <strong><%= form.label :start_date, class: "col-lg-3" %></strong>
+            <%= form.date_field :start_date, class: "form-control" %>
+            <%= itinerary.start_date %>
+          </div>
+        </div>
+
+          <div class="field form-group">
+          <div class="col-md-8">
+            <strong><%= label_tag :destination, "Destination", class: "col-lg-3" %></strong>
+            <%= text_field_tag :destination, nil, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="field form-group">
+          <div class="col-md-8">
+            <strong><%= form.label :end_date, class: "col-lg-3" %></strong>
+            <%= form.date_field :end_date, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= form.label :avatar_image %>
+          <%= form.file_field :avatar_image %>
+        </div>
+
+        <div class="field form-group">
+          <div class="col-md-8">
+            <strong><%= form.label :available_seat, class: "col-lg-3" %></strong>
+            <%= form.number_field :available_seat, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="field form-group">
+          <div class="col-md-8">
+            <strong><%= form.label :description, class: "col-lg-3" %></strong>
+            <%= form.text_area :description, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="field form-group">
+          <div class="col-md-8">
+            <%= form.hidden_field :user_id, value: current_user.id, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="col-md-8">
+          <div class="actions" style="color:white;">
+            <%= form.submit :submit, class: 'forms_buttons-action' %>
+          </div>
+        </div>
+        <div>
+      </fieldset>
+    <% end %>
+
     </div>
-  <% end %>
-
-  <div class="field form-group">
-    <div class="col-md-8">
-      <strong><%= label_tag :origin, "Origin", class: "col-lg-3" %></strong>
-      <%= text_field_tag :origin, nil,  class: "form-control" %>
-    </div>
   </div>
-
-  <div class="field form-group">
-    <div class="col-md-8">
-      <strong><%= form.label :start_date, class: "col-lg-3" %></strong>
-      <%= form.date_field :start_date, class: "form-control" %>
-      <%= itinerary.start_date %>
-    </div>
-  </div>
-
-    <div class="field form-group">
-    <div class="col-md-8">
-      <strong><%= label_tag :destination, "Destination", class: "col-lg-3" %></strong>
-      <%= text_field_tag :destination, nil, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="field form-group">
-    <div class="col-md-8">
-      <strong><%= form.label :end_date, class: "col-lg-3" %></strong>
-      <%= form.date_field :end_date, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="field">
-    <%= form.label :avatar_image %>
-    <%= form.file_field :avatar_image %>
-  </div>
-
-  <div class="field form-group">
-    <div class="col-md-8">
-      <strong><%= form.label :available_seat, class: "col-lg-3" %></strong>
-      <%= form.number_field :available_seat, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="field form-group">
-    <div class="col-md-8">
-      <strong><%= form.label :description, class: "col-lg-3" %></strong>
-      <%= form.text_area :description, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="field form-group">
-    <div class="col-md-8">
-      <%= form.hidden_field :user_id, value: current_user.id, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="col-md-8">
-  <div class="actions">
-    <%= form.submit :submit, class:"btn btn-primary" %>
-  </div>
-  </div>
-<% end %>
-</div>
-
+</section>
