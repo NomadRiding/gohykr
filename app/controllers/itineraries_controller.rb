@@ -1,37 +1,38 @@
 class ItinerariesController < ApplicationController
+  skip_before_action :authorize, only: :index
   before_action :set_itinerary, only: [:show, :edit, :update, :destroy]
 
   # GET /itineraries
   # GET /itineraries.json
   def index
-    unless @current_user == nil
-      @itineraries = Itinerary.all.order(:start_date)
-      @current_user = User.find(session[:user_id])
-      respond_to do |format|
-        format.html do
-          @itineraries = @itineraries.map{ |i| ::ItineraryPresenter.new(i) }
-          @itineraries = build_pagination(@itineraries)
-        end
-        format.json do
-          render json: { itineraries: @itineraries, page: page, totalPages: total_pages }
-        end
+    @itineraries = Itinerary.all.order(:start_date)
+    respond_to do |format|
+      format.html do
+        @itineraries = @itineraries.map{ |i| ::ItineraryPresenter.new(i) }
+        @itineraries = build_pagination(@itineraries)
       end
-    else
-      @itineraries = Itinerary.all.order(:start_date)
-      respond_to do |format|
-        format.html do
-          @itineraries = @itineraries.map{ |i| ::ItineraryPresenter.new(i) }
-          @itineraries = build_pagination(@itineraries)
-        end
-        format.json do
-          page      = (params[:page] || 1).to_i
-          per_page  = 5
-          @itineraries = @itineraries.paginate(page: page, per_page: per_page)
-          render json: { itineraries: @itineraries }
-        end
+      format.json do
+        render json: {
+          itineraries: @itineraries.map do |itinerary|
+            {
+              properties: {
+                id: itinerary.id,
+                start_date: itinerary.start_date,
+                end_date: itinerary.end_date,
+                available_seat: itinerary.available_seat,
+                description: itinerary.description,
+                user: itinerary.user,
+                start_loc: itinerary.locations.where(is_origin: true).first.address,
+                end_loc: itinerary.locations.where(is_origin: false).first.address,
+                eta:  helpers.distance_of_time_in_words(format(itinerary.start_date), format(itinerary.end_date)),
+              }
+            }
+          end
+         }
       end
     end
 end
+
 
   # GET /itineraries/1
   # GET /itineraries/1.json
@@ -57,11 +58,11 @@ end
         format.html { redirect_to @itinerary, notice: 'Itinerary was successfully created.' }
         format.json { render :show, status: :created, location: @itinerary }
 
-        origin = @itinerary.locations.new( address: params[:origin], is_origin: true )
-        origin.get_coords
+        # origin = @itinerary.locations.new( address: params[:origin], is_origin: true )
+        # origin.get_coords
 
-        destination = @itinerary.locations.new( address: params[:destination], is_origin: false )
-        destination.get_coords
+        # destination = @itinerary.locations.new( address: params[:destination], is_origin: false )
+        # destination.get_coords
 
       else
         format.html { render :new }
@@ -114,6 +115,5 @@ end
   def itinerary_params
     params.require(:itinerary).permit(:start_date, :end_date, :available_seat, :projected_eta, :description, :user_id, :avatar_image)
   end
-
 end
 

@@ -966,14 +966,27 @@ input::placeholder {
 
 /***************** 4. Event Search *************************************/
 
+
+
+  /************************************ END ****************************************/
+
 .containingEvents {
   margin-top: 10vh;
+}
+
+.containingEvents {
+  margin-top: 10vh;
+  height: 100%;
+}
+
+.card {
+  height: 100px;
+  overflow: auto;
 }
 
 /********************** 5. About Us ***************************************/
 
 #containAbout {
-  margin-top: 5vh;
   margin-left: 10px;
   margin-bottom: 5vh;
   height: 90vh;
@@ -1005,4 +1018,10 @@ input::placeholder {
   width: 16vw;
   border-radius: 25px;
   padding: 0;
+}
+
+/******************************************** ABOUT US ***********************************************/
+
+.nameTitle {
+  margin-left: 2vw;
 }
