@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import TableRow from './TableRow'
 import Search from './Search'
+import DateSelector from './DateSelector'
+import moment from 'moment'
 
 export default class Itineraries extends Component {
   state = {
@@ -29,11 +31,19 @@ export default class Itineraries extends Component {
     this.setState({ filteredItineraries })
   }
 
+  handleSelectDate = date => {
+    const selectedDate = String(moment(date).format('YYYY-MM-DD'))
+    let { filteredItineraries, itineraries } = this.state
+    filteredItineraries = itineraries.filter(itinerary => itinerary.properties.start_date === selectedDate )
+    this.setState({ filteredItineraries })
+  }
+
   render() {
     const { filteredItineraries } = this.state
     return (
       <div>
         <Search handleSearch={this.handleSearch} />
+        <DateSelector selectDate={this.handleSelectDate} />
         <table className="table">
           <thead>
             <tr>
