@@ -28,7 +28,7 @@ user = User.create!( email: "test@email.com",
     2.times do
       it = Itinerary.create!(
         start_date: Faker::Date.forward((1..3).to_a.sample).iso8601,
-        end_date: Faker::Date.forward((3..23).to_a.sample).iso8601,
+        end_date: Faker::Date.forward((4..23).to_a.sample).iso8601,
         available_seat: Faker::Number.between(1, 7),
         description: [Faker::VForVendetta.quote, Faker::WorldOfWarcraft.quote, Faker::PrincessBride.quote, Faker::Movie.quote].sample,
         user: user,
