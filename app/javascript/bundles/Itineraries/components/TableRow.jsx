@@ -1,30 +1,30 @@
 import React from 'react'
 
-const TableRow = props => (
-  <tr id={`itinerary_${props.id}`}>
+const TableRow = ({itinerary}) => (
+  <tr>
     <td>
-      props.start_date
+      {itinerary.start_date}
     </td>
     <td>
-      props.end_date
+      {itinerary.end_date}
     </td>
     <td>
-      props.available_seat
+      {itinerary.available_seat}
     </td>
     <td>
-      props.eta
+      {itinerary.eta}
     </td>
     <td>
-      props.start_location
+      {itinerary.start_loc}
     </td>
     <td>
-      props.end_location
+      {itinerary.end_loc}
     </td>
     <td>
-      props.short_description
+      {itinerary.description}
     </td>
     <td>
-      props.username
+      {itinerary.user.username}
     </td>
   </tr>
 )
