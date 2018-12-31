@@ -26,7 +26,7 @@ export default class Itineraries extends Component {
     if (searchText.trim() !== '') {
       filteredItineraries = itineraries.filter(itinerary => regexp.test(itinerary.properties.start_loc))
     } else {
-      console.log("something went wrong")
+      <h1>Something went wrong </h1>
     }
     this.setState({ filteredItineraries })
   }
