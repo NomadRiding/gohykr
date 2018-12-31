@@ -5,11 +5,11 @@ class ItineraryPresenter < SimpleDelegator
     avatar_image
   end
 
-  def start_location
+  def start_loc
     locations&.origin&.address
   end
 
-  def end_location
+  def end_loc
     locations&.destination&.address
   end
 

@@ -14,7 +14,7 @@
   <div class="field form-group">
     <div class="col-md-8">
       <strong><%= label_tag :origin, "Origin", class: "col-lg-3" %></strong>
-      <%= text_field_tag :origin, nil,  class: "form-control" %>
+      <%= text_field_tag :start_loc, nil,  class: "form-control" %>
     </div>
   </div>
 
@@ -29,7 +29,7 @@
     <div class="field form-group">
     <div class="col-md-8">
       <strong><%= label_tag :destination, "Destination", class: "col-lg-3" %></strong>
-      <%= text_field_tag :destination, nil, class: "form-control" %>
+      <%= text_field_tag :end_loc, nil, class: "form-control" %>
     </div>
   </div>
 
@@ -72,4 +72,3 @@
   </div>
 <% end %>
 </div>
-
