@@ -1,139 +1,83 @@
 <%= render 'chatrooms/messages' %>
-
-<div class="wrap" data-pos="0">
-		<div class="headbar">
-			<i class="zmdi zmdi-arrow-left btnBack"></i> <span>Find Your Next Roadtrip</span>
-		</div>
-		<div class="header">
-			<div class="bg"></div>
-			<div class="filter"></div>
-			<div class="title">
-				<div class="fromPlace">
-					<span>N</span><span>Y</span><span>C</span>
-				</div>
-				<span class="separator"><i class="zmdi zmdi-city"></i></span>
-				<div class="toPlace">
-					<span>M</span><span>I</span><span>A</span>
-				</div>
+<%
+=begin%>
+ 
+	<div class="wrap" data-pos="0">
+			<div class="headbar">
+				<i class="zmdi zmdi-arrow-left btnBack"></i> <span>Find Your Next Roadtrip</span>
 			</div>
-			<div class="map"></div>
-		</div>
+			<div class="header">
+				<div class="bg"></div>
+				<div class="filter"></div>
+				<div class="title">
+					<div class="fromPlace">
+						<span>N</span><span>Y</span><span>C</span>
+					</div>
+					
+				</div>
+				<div class="map"></div>
+			</div>
 
-		<div class="content">
-			<section>
-				<div class="form">
-					<div class="control select">
-						<div class="control-head">
-							<i class="zmdi zmdi-pin"></i>
-							<span class="close"><i class="zmdi zmdi-close"></i></span>
-							<div>
-								<h6>From</h6>
-								<span class="airport-name" data-role="from">NYC, New York</span>
-							</div>
-						</div>
-						<div class="control-body">
-							<ul class="select-index"></ul>
-							<div class="nano">
-							    <div class="nano-content">
-							    	<ul class="select-data"></ul>
-							    </div>
-							</div>
-						</div>
-					</div>
-					<div class="control select">
-						<div class="control-head">
-							<i class="zmdi zmdi-pin"></i>
-							<span class="close"><i class="zmdi zmdi-close"></i></span>
-							<div>
-								<h6>To</h6>
-								<span class="airport-name" data-role="to">MIA, Florida</span>
-							</div>
-						</div>
-						<div class="control-body">
-							<ul class="select-index"></ul>
-							<div class="nano">
-							    <div class="nano-content">
-							    	<ul class="select-data"></ul>
-							    </div>
-							</div>
-						</div>
-					</div>
-					<div class="control dateinput">
-						<div class="control-head">
-							<i class="zmdi zmdi-calendar"></i>
-							<span class="close"><i class="zmdi zmdi-close"></i></span>
-							<div class="control-item">
-								<h6>Depart</h6>
-								<span>MON, 8 May</span>
-							</div>
-							<div class="control-item">
-								<h6>Return</h6>
-								<span>One Way</span> <!--Quitar si no se selecciona-->
-							</div>
-						</div>
-						<div class="control-body">
-							<div class="info-message">
-								<i class="zmdi zmdi-info"></i>
-								<!-- <span>Select the depar date then the return date if you need a round trip ticket</span> -->
-							</div>
-							<div class="calendar">
-								<div class="month">
-									<i class="zmdi zmdi-chevron-left"></i>
-									<span>May</span>
-									<i class="zmdi zmdi-chevron-right"></i>
+			<div class="content">
+				<section>
+					<div class="form">
+						<div class="control select">
+							<div class="control-head">
+								<i class="zmdi zmdi-pin"></i>
+								<span class="close"><i class="zmdi zmdi-close"></i></span>
+								<div>
+									<h6>From</h6>
+									<span class="airport-name" data-role="from">NYC, New York</span>
 								</div>
-								<div class="week">
-									<span>S</span>
-									<span>M</span>
-									<span>T</span>
-									<span>W</span>
-									<span>T</span>
-									<span>F</span>
-									<span>S</span>
+							</div>
+							<div class="control-body">
+								<ul class="select-index"></ul>
+								<div class="nano">
+									<div class="nano-content">
+										<ul class="select-data"></ul>
+									</div>
 								</div>
-								<div class="days"></div>
 							</div>
 						</div>
-					</div>
-					<div class="control radio passengers">
-						<i class="zmdi zmdi-accounts"></i>
-						<div class="control-item">
-							<h6>Passengers</h6>
-							<label>
-								<input type="radio" name="passengers" value="0" checked="checked">
-								<div><span>1</span>&times;<i class="zmdi zmdi-male-alt"></i></div>
-							</label>
+
+						<div class="control dateinput">
+							<div class="control-head">
+								<i class="zmdi zmdi-calendar"></i>
+								<span class="close"><i class="zmdi zmdi-close"></i></span>
+								<div class="control-item">
+									<h6>Depart</h6>
+									<span>MON, 8 May</span>
+								</div>
+							</div>
 
 						</div>
-						<section class="spinner">
-							<button data-action="plus"><i class="zmdi zmdi-plus"></i></button>
-							<button data-action="minus"><i class="zmdi zmdi-minus"></i></button>
+
+
+						<div class="control">
+							<button class="btnSearch">Find Itinerary</button>
+						</div>
+
+					</div>
+					<div class="list">
+						<div class="nano">
+							<div class="nano-content">
+
+							</div>
+						</div>
+					</div>
+
+					<div class="ticket">
+						<section>
+
 						</section>
+						<button class="btnBook">BOOK FLIGHT</button>
+						<!-- <button class="btnHome">BACK TO HOME</button> -->
+						<div class="loader">Loading...</div>
 					</div>
 
-					<div class="control">
-						<button class="btnSearch">Find Itinerary</button>
-					</div>
+				</section>
+			</div>
 
-				</div>
-				<div class="list">
-					<div class="nano">
-					    <div class="nano-content">
-
-					    </div>
-					</div>
-				</div>
-
-				<div class="ticket">
-					<section>
-
-					</section>
-					<button class="btnBook">BOOK FLIGHT</button>
-					<!-- <button class="btnHome">BACK TO HOME</button> -->
-					<div class="loader">Loading...</div>
-				</div>
-
-			</section>
-		</div>
-
-	</div>
+		</div> 
+<%
+=end%>

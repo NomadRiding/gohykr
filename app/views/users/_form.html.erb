@@ -1,28 +1,49 @@
+<% stylesheet_link_tag 'application' %>
+
+
+<h1 class="section__headline">User Profile</h1>
+
+<%= render 'chatrooms/messages' %>
+
 <%= form_with model: user, local: false do  |f|  %>
-  <div>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+  <div class="avatar">
+    <%= f.label :avatar_image, accept: "https://maxcdn.icons8.com/Share/icon/Users//circled_user_female1600.png" %>
+    <label for="avatar-upload">
+      <%= f.file_field :avatar_image, class:'overlay' %>
+      <span class="octicon octicon-cloud-upload"></span>
+    </label>
   </div>
-  <div>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+
+<section class="user">
+  <div class="edit-forms user_options-forms" id="user_options-forms">
+    <div class="user_forms-login" style="display:block;">
+      <div class="names">
+          <div>
+            <%= f.label :first_name, :class => 'input-titles' %>
+            <%= f.text_field :first_name, :class => 'inputs' %>
+          </div>
+          <div>
+            <%= f.label :last_name, :class => 'input-titles' %>
+            <%= f.text_field :last_name, :class => 'inputs' %>
+          </div>
+      </div>
+
+      <div class="element1">
+        <%= f.label :gender, :class => 'centered input-titles' %>
+        <%= f.select :gender, ["male", "female"], :class => 'gender' %>
+      </div>
+      <div class="element2">
+        <%= f.label :bio, :class => 'centered input-titles' %>
+        <%= f.text_area :bio, :class => 'textarea' %>
+      </div>
+
+      <div>
+        <%= f.hidden_field :id %>
+      </div>
+      <div>
+        <%= f.submit 'Update Profile', :class => 'forms_buttons-action' %>
+      </div>
+    </div>
   </div>
-  <div>
-    <%= f.label :gender %>
-    <%= f.select :gender, ["male", "female"] %>
-  </div>
-  <div>
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
-  </div>
-  <div>
-    <%= f.label :avatar_image %>
-    <%= f.file_field :avatar_image %>
-  </div>
-  <div>
-    <%= f.hidden_field :id %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
+</section>
 <%end %>

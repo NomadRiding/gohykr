@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_profile_update_params)
-      flash[:notice] = "Profile information saved."
+      flash[:success] = "Profile information saved."
     else
       flash[:alertt] = "There was an error. Please try again."
     end
