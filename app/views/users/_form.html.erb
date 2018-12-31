@@ -1,4 +1,12 @@
+<h1 class="section__headline">User Profile</h1>
+
+<%= render 'chatrooms/messages' %>
+
 <%= form_with model: user, local: false do  |f|  %>
+  <div>
+    <%= f.label :avatar_image %>
+    <%= f.file_field :avatar_image %>
+  </div>
   <div>
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
@@ -15,10 +23,7 @@
     <%= f.label :bio %>
     <%= f.text_area :bio %>
   </div>
-  <div>
-    <%= f.label :avatar_image %>
-    <%= f.file_field :avatar_image %>
-  </div>
+
   <div>
     <%= f.hidden_field :id %>
   </div>

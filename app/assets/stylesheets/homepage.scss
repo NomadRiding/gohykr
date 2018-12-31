@@ -87,7 +87,6 @@
   }
   
   form {
-    display: flex;
     position: relative;
     width: 100%;
     // box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4);
@@ -95,6 +94,7 @@
 
   .height-form {
     height: 530px;
+    display: flex;
   }
 
   .search-box {

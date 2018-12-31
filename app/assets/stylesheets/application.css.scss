@@ -984,6 +984,14 @@ input::placeholder {
   overflow: auto;
 }
 
+.event-button {
+  margin-top: 40px;
+}
+
+.event-form {
+  top: 40%!important;
+}
+
 /********************** 5. About Us ***************************************/
 
 #containAbout {
@@ -1073,3 +1081,27 @@ div.field, div.actions {
   border-color: gray;
 }
 
+
+
+/*************************** 7. Itineraries *******************************/
+
+.btn-primary {
+  margin-right: auto;
+  width: 190px;
+  display: block;
+  margin-left: auto;
+  background-color: #ff4b54;
+  color: white !important;
+  padding: 15px 30px !important;
+}
+
+.btn-primary:hover {
+  background-color: #ca3d44!important;
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #ff8989;
+  border-color: #db2828;
+}
