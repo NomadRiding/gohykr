@@ -12,7 +12,7 @@ user = User.create!( email: "test@email.com",
                     last_name: Faker::Name.last_name,
                     username: Faker::Internet.unique.username(5..10),
                   )
-5.times do
+15.times do
   user = User.new(
     email: Faker::Internet.unique.email,
     first_name: Faker::Name.first_name,
@@ -25,7 +25,7 @@ user = User.create!( email: "test@email.com",
     )
     user.save(validate: false)
 
-    2.times do
+    3.times do
       it = Itinerary.create!(
         start_date: Faker::Date.forward((1..3).to_a.sample).iso8601,
         end_date: Faker::Date.forward((4..23).to_a.sample).iso8601,

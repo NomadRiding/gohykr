@@ -11,10 +11,12 @@ class DateSelector extends Component {
 
   render() {
     return (
-      <DatePicker
+      <div className="dateSelecting">
+      <DatePicker className="form-control"
         selected={this.state.startDate}
         onChange={this.handleChange}
       />
+      </div>
     )
   }
 }

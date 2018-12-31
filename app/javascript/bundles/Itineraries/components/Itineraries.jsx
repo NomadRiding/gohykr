@@ -42,8 +42,10 @@ export default class Itineraries extends Component {
     const { filteredItineraries } = this.state
     return (
       <div>
-        <Search handleSearch={this.handleSearch} />
-        <DateSelector selectDate={this.handleSelectDate} />
+        <div className="searchOption">
+          <Search handleSearch={this.handleSearch} />
+          <DateSelector selectDate={this.handleSelectDate} />
+        </div>
         <table className="table">
           <thead>
             <tr>
