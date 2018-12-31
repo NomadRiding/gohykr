@@ -22,6 +22,9 @@
       </div>
       <nav>
         <ul>
+          <% if logged_in? %>
+            <li><%= link_to "Profile", users_path(:id) %>
+          <% end %>
           <li><%= link_to "Itineraries", itineraries_path %></li>
           <li><%= logged_in? ? (link_to "Post a Ride", postaride_path) : (link_to "Post a Ride", login_path) %></li>
           <li><%= link_to "Events", events_path %></li>
