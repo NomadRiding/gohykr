@@ -52,6 +52,10 @@ end
   # POST /itineraries.json
   def create
     @itinerary = Itinerary.new(itinerary_params)
+    @start_loc = Location.create(address: params[:start_loc], is_origin: true, itinerary_id: @itinerary.id)
+    @end_loc = Location.create(address: params[:end_loc], is_origin: false, itinerary_id: @itinerary.id)
+    @itinerary.locations.push(@start_loc)
+    @itinerary.locations.push(@end_loc)
 
     respond_to do |format|
       if @itinerary.save
