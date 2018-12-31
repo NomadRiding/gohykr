@@ -870,6 +870,9 @@ input::placeholder {
   border-radius: 3px;
   padding: 10px 35px;
   font-size: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   color: #fff;
@@ -1087,7 +1090,7 @@ div.field, div.actions {
 
 .btn-primary {
   margin-right: auto;
-  width: 190px;
+  width: 160px;
   display: block;
   margin-left: auto;
   background-color: #ff4b54;
@@ -1104,4 +1107,129 @@ div.field, div.actions {
   color: #fff;
   background-color: #ff8989;
   border-color: #db2828;
+}
+
+
+/**************************** 8. User Profile *****************************/
+
+.avatar {
+  position: relative;
+  margin: auto;
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border: 1px solid #D3D3D3;
+  background-image: url('avatar.png');
+  background-size: cover;
+  padding: 2px;
+  z-index: 100;
+}
+.avatar img {
+  width: 100%;
+}
+.avatar .overlay {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 113, 178, 0.8);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.avatar:hover .overlay {
+  opacity: 0.8;
+}
+
+#avatar-upload {
+  display: none;
+}
+
+
+input[type="submit"] {
+  background-color: #e8716d;
+  border-radius: 3px;
+  padding: 10px 35px;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background-color: #e14641;
+}
+
+
+.names {
+  display: flex;
+  padding: 20px
+}
+
+.edit-forms {
+  position: absolute;
+  top: 10%;
+  left: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 550px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.25);
+  -webkit-transform: none;
+  transform: none;
+  transition: none;
+}
+
+.input-titles {
+  font-size: 17px;
+  margin-left: 20px;
+  width: 160px;
+}
+
+.inputs {
+  font-size: 20px;
+  margin-left: 20px;
+  width: 180px;
+  font-weight: 600;
+  font-family: Montserrat, sans serif;
+  border-bottom: 1px solid black;
+}
+
+.element1, .element2 {
+  text-align: center;
+  padding: 15px;
+}
+
+.centered {
+  text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textarea {
+  font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    padding: 10px 40px;
+}
+
+select {
+  font-family: Montserrat, sans-serif;
+  font-size: 15px;
+  padding: 10px;
 }
