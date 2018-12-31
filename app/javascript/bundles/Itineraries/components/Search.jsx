@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import DateSelector from './DateSelector'
+
 
 class Search extends Component {
   state = { value: '' }
@@ -17,24 +19,27 @@ class Search extends Component {
   render() {
     const { value } = this.state
     return (
-    <form className="form-inline md-form mr-auto mb-4" onSubmit={this.handleSubmit}>
-        <h1 className="section__headline">Find a roadtrip Near you</h1>
-      <br />
-      <div className="spacerForm">
-        <input className="form-control mr-sm-2"
-        id="search"
-        type="text"
-        aria-label="Search"
-        placeholder="City"
-        value={value}
-        onChange={this.handleChange}
-        />
-          <button className="btn aqua-gradient btn-rounded btn-sm my-0"
-        type="submit"
-        value="Search!"
-        >Search</button>
-        </div>
-    </form>
+    
+        <div class="search-box">
+          <h1 className="hero-title">Find A Roadtrip Near You</h1>
+          <form className="form-inline md-form mb-4" onSubmit={this.handleSubmit}>
+
+            <div className="spacerForm">
+              <input className="form-control mr-sm-2"
+              id="search"
+              type="text"
+              aria-label="Search"
+              placeholder="City"
+              value={value}
+              onChange={this.handleChange}
+              />
+              
+              <button className="forms_buttons-action btn aqua-gradient btn-rounded btn-sm"
+              type="submit" value="Search!">Search</button>
+              </div>
+          </form>
+          </div>
+
     )
   }
 }
