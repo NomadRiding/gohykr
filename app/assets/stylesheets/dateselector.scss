@@ -673,3 +673,26 @@
   border-left-color: #e6e6e6;
   cursor: default;
 }
+
+/****************************************** style search bar **********************************************/
+
+.searchOption {
+  margin-left: 5vw;
+}
+
+.spacerForm {
+  margin-top: 13vh;
+  margin-left: -16.5vw;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dateSelecting {
+  border: 1px solid black;
+  padding: 6px;
+  width: 10vw;
+  border: none;
+  margin-top: 0;
+  margin-left: 32vw;
+  font-size: 17px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+}

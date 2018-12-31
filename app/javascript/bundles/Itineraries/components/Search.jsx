@@ -17,19 +17,23 @@ class Search extends Component {
   render() {
     const { value } = this.state
     return (
-    <form onSubmit={this.handleSubmit}>
-      <h1>LOOK HERE</h1>
-      <input
+    <form className="form-inline md-form mr-auto mb-4" onSubmit={this.handleSubmit}>
+        <h1 className="section__headline">Find a roadtrip Near you</h1>
+      <br />
+      <div className="spacerForm">
+        <input className="form-control mr-sm-2"
         id="search"
         type="text"
-        label="search"
+        aria-label="Search"
+        placeholder="City"
         value={value}
         onChange={this.handleChange}
         />
-        <input
+          <button className="btn aqua-gradient btn-rounded btn-sm my-0"
         type="submit"
         value="Search!"
-        />
+        >Search</button>
+        </div>
     </form>
     )
   }
