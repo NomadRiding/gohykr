@@ -41,17 +41,19 @@ export default class Itineraries extends Component {
   render() {
     const { filteredItineraries } = this.state
     return (
-      <div>
-        <div className="searchOption">
-          <Search handleSearch={this.handleSearch} />
-          <DateSelector selectDate={this.handleSelectDate} />
-        </div>
+    <div class="hero">
+         <form class="height-form">
+          <div className="searchOption">
+            <Search handleSearch={this.handleSearch} />
+            <DateSelector selectDate={this.handleSelectDate} />
+          </div>
+          </form>
         <table className="table">
           <thead>
             <tr>
               <th style={{ width: '15%' }}>Start date</th>
               <th style={{ width: '15%' }}>Due date</th>
-              <th style={{ width: '15%' }}>Available seat</th>
+              <th style={{ width: '15%' }}>Available seats</th>
               <th style={{ width: '15%' }}>ETA</th>
               <th style={{ width: '15%' }}>Start Loc</th>
               <th style={{ width: '15%' }}>End Loc</th>
@@ -67,7 +69,7 @@ export default class Itineraries extends Component {
             }
           </tbody>
         </table>
-      </div>
+    </div>
     )
   }
 
