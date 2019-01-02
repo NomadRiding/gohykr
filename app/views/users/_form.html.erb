@@ -7,7 +7,8 @@
 
 <%= form_with model: user, local: false do  |f|  %>
   <div class="avatar">
-    <%= f.label :avatar_image, accept: "https://maxcdn.icons8.com/Share/icon/Users//circled_user_female1600.png" %>
+  <%= image_tag user.avatar_image.attached? ? user.avatar_image : "https://maxcdn.icons8.com/Share/icon/Users//circled_user_female1600.png" %>
+    <%= f.label :avatar_image %>
     <label for="avatar-upload">
       <%= f.file_field :avatar_image, class:'overlay' %>
       <span class="octicon octicon-cloud-upload"></span>
@@ -31,6 +32,10 @@
       <div class="element1">
         <%= f.label :gender, :class => 'centered input-titles' %>
         <%= f.select :gender, ["male", "female"], :class => 'gender' %>
+          <div>
+            <%= f.label :username, :class => 'input-titles' %>
+            <%= f.text_field :username, :class => 'inputs' %>
+          </div>
       </div>
       <div class="element2">
         <%= f.label :bio, :class => 'centered input-titles' %>

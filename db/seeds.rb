@@ -12,6 +12,26 @@ user = User.create!( email: "test@email.com",
                     last_name: Faker::Name.last_name,
                     username: Faker::Internet.unique.username(5..10),
                   )
+user2 = User.create!( email: "traveler@email.com",
+                    password: "password",
+                    first_name: 'Nomad',
+                    last_name: 'Riding',
+                    username: 'NRworldTraveler',
+                  )
+user3 = User.create!( email: "hostbro@email.com",
+                    password: "password",
+                    first_name: 'Wade',
+                    last_name: 'Wilson',
+                    username: 'TheRedGuy',
+                  )
+user4 = User.create!( email: "hostgal@email.com",
+                    password: "password",
+                    first_name: 'Jennifer',
+                    last_name: 'Lawrence',
+                    username: 'Mystique',
+                  )
+
+
 15.times do
   user = User.new(
     email: Faker::Internet.unique.email,
