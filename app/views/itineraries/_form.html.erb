@@ -27,7 +27,7 @@
             <%= form.date_field :start_date, class: "form-control" %>
             <%= itinerary.start_date %>
         </div>
-        
+
         <div class="forms_field">
             <strong><%= label_tag :destination, "Destination" %></strong>
             <%= text_field_tag :end_loc, nil, class: "form-control" %>
@@ -47,19 +47,17 @@
             <strong><%= form.label :available_seats%></strong>
             <%= form.number_field :available_seats, class: "form-control" %>
         </div>
-        
+
         <div class="forms_field">
             <strong><%= form.label :description %></strong>
             <%= form.text_area :description, class: "form-control" %>
         </div>
-        
-        <%
-=begin%>
- <div class="forms_field">
+
+        <% begin %>
+          <div class="forms_field">
             <%= form.hidden_field :user_id, value: current_user.id, class: "form-control" %>
-        </div> 
-<%
-=end%>
+          </div>
+        <% end %>
 
         <div class="actions">
           <%= form.submit :submit,  class: 'forms_buttons-action' %>
