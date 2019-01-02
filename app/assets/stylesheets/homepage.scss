@@ -1,28 +1,28 @@
 /* Thanks to @kathykato for the idea */
 
-  
+
 //   body {
 //     font-family: sans-serif;
 //     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.0)),
 //       url('https://gorbich.com/common/275637.jpeg') no-repeat    center center fixed;
 //     background-size: cover;
-//     overflow: hidden;  
+//     overflow: hidden;
 //   }
-  
+
 
   a {
     color: #f1f2f3;
     text-decoration: none;
   }
-  
+
   a:hover {
     opacity: 1;
   }
-  
+
   h1 i {
     font-size: 2rem;
   }
-  
+
   h2 {
     font-size: 3em;
     font-weight: 600;
@@ -39,14 +39,14 @@
     line-height: 1em;
     text-align: center;
   }
-  
+
   .hero {
     height: 530px;
     position: relative;
     background:  linear-gradient(
-        rgba(238, 204, 204, 0.45), 
+        rgba(238, 204, 204, 0.45),
         rgba(77, 57, 57, 0.45)
-      ), url('travel.jpg');
+      ), image-url('travel.jpg');
     margin-top: -50px;
     background-repeat: no-repeat;
     background-position: right top;
@@ -54,7 +54,7 @@
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.4)
   }
-  
+
   .form-inline {
     margin-left: auto!important;
     margin-right: auto!important;
@@ -70,13 +70,13 @@
     transition: all 0.2s;
     cursor: pointer;
   }
-  
+
   a.btn:hover {
     background: #325d81;
     border: 1px solid #325d81;
     color: #fff;
   }
-  
+
   .content {
     height: 100vh;
     width: 100%;
@@ -85,7 +85,7 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   form {
     position: relative;
     width: 100%;
@@ -101,29 +101,29 @@
     height: 235px;
     padding: 20px;
   }
-  
+
 //   form > * {
 //     line-height: 50px;
 //     font-size: 1rem;
 //     border-radius: 0;
 //     outline: 0;
 //   }
-  
+
   input[type="search"] {
     flex-basis: 500px;
     padding: 8px 15px 10px;
     overflow: hidden;
   }
-  
+
 //   input[type="submit"] {
 //     color: #ffffff;
 //     padding: 0 30px;
 //     cursor: pointer;
 //     transition: all 0.2s;
 //   }
-  
 
-  
+
+
   .searchOption {
     margin-top: 120px;
     display: block;
@@ -148,7 +148,7 @@
     margin-top: 10px;
   }
 
-  button[type="submit"]:hover { 
+  button[type="submit"]:hover {
   background-color: #e14641;
   }
 
@@ -159,7 +159,7 @@
   .table {
     background-color: #e9e7e7;
   }
-  
+
   tbody {
       background-color: white;
   }
@@ -168,60 +168,60 @@
     body {
       font-size: 0.9rem;
     }
-  
+
       header {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       flex-direction: column;
       padding: 10px !important;
     }
-  
+
     h1 {
       margin-bottom: 15px;
     }
-  
+
     h2 {
       font-size: 2rem;
     }
-  
+
     .content {
       padding: 20px;
     }
-    
+
     form {
       width: 100%;
     }
-    
+
     form > * {
       font-size: 0.9rem;
     }
-  
+
     input[type="search"] {
       flex-basis: 100%;
     }
   }
-  
-  @media all and (max-width:600px) { 
+
+  @media all and (max-width:600px) {
     header nav ul {
       flex-wrap: wrap;
       justify-content: center;
     }
-    
+
     header nav ul li{
       margin: 0 10px;
     }
-  
+
     form {
       display: flex;
       flex-direction: column;
     }
-    
+
     input[type="search"] {
       text-align: center;
     }
   }
-  
-  @media all and (max-width:425px) { 
+
+  @media all and (max-width:425px) {
     header nav ul > li:last-child {
       margin-top: 30px;
     }
